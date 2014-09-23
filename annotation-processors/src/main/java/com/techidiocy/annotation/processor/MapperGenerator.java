@@ -109,7 +109,7 @@ public class MapperGenerator extends AbstractProcessor {
 						if(!checkPrimitiveOrWrapper(genericClassName)) { 
 							FieldMeta fieldMeta = field.getAnnotation(FieldMeta.class);
 							bw.append("import "+fieldMeta.associatedSourceClass().getName()+";\n");
-						//	bw.append("import "+field.getN+";\n");
+							bw.append("import "+packageElement.getQualifiedName()+"."+genericClassName+";\n");
 						}
 					}
 				 }
@@ -142,7 +142,7 @@ public class MapperGenerator extends AbstractProcessor {
 				    		bw.append(EXTRA_SPACE+genericClassNameSource+"Mapper "+genericClassNameSource.toLowerCase()+"Mapper = new "+genericClassNameSource+"Mapper();\n");
 				    		bw.append(EXTRA_SPACE+"List<"+genericClassName+"> "+genericClassName.toLowerCase()+"List = new ArrayList<"+genericClassName+">();\n");
 				    		bw.append(EXTRA_SPACE+"for("+genericClassNameSource+" "+genericClassNameSource.toLowerCase() +": source."+methodGet.getName()+"()) { \n");
-				    		bw.append(EXTRA_SPACE+genericClassName.toLowerCase()+"List.add("+genericClassNameSource.toLowerCase()+"Mapper.mapSourceToDTO("+genericClassNameSource.toLowerCase()+"));\n");
+				    		bw.append(EXTRA_SPACE+EXTRA_SPACE+genericClassName.toLowerCase()+"List.add("+genericClassNameSource.toLowerCase()+"Mapper.mapSourceToDTO("+genericClassNameSource.toLowerCase()+"));\n");
 				    		bw.append(EXTRA_SPACE+"}\n");
 				    		bw.append(EXTRA_SPACE+dtoName.toLowerCase()+"."+methodSet.getName()+"("+genericClassName.toLowerCase()+"List); \n");
 				    	}
