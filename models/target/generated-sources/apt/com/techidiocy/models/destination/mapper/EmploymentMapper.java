@@ -1,6 +1,6 @@
 /**Auto generated code,don't modify it.
 * Author             ---- > Auto Generated.
-* Date  and Time     ---- > Tue Sep 23 10:46:06 IST 2014
+* Date  and Time     ---- > Wed Sep 24 11:03:42 IST 2014
 * Source             -----> com.techidiocy.models.source.Employment
 * Destination        -----> com.techidiocy.models.destination.EmploymentDTO
 ***/
@@ -29,5 +29,5 @@ public EmploymentDTO mapSourceToDTO(Employment source) {
    employmentdto.setSalary(source.getSalary()); 
    employmentdto.setCurrent(source.isCurrent()); 
    return employmentdto;
-}
+   }
 }

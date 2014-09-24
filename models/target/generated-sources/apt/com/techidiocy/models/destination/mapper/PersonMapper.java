@@ -1,6 +1,6 @@
 /**Auto generated code,don't modify it.
 * Author             ---- > Auto Generated.
-* Date  and Time     ---- > Tue Sep 23 10:46:06 IST 2014
+* Date  and Time     ---- > Wed Sep 24 11:03:42 IST 2014
 * Source             -----> com.techidiocy.models.source.Person
 * Destination        -----> com.techidiocy.models.destination.PersonDTO
 ***/
@@ -34,8 +34,8 @@ public PersonDTO mapSourceToDTO(Person source) {
    List<EmploymentDTO> employmentdtoList = new ArrayList<EmploymentDTO>();
    for(Employment employment: source.getEmployments()) { 
       employmentdtoList.add(employmentMapper.mapSourceToDTO(employment));
-   }
+      }
    persondto.setEmployments(employmentdtoList); 
    return persondto;
-}
+   }
 }

@@ -143,7 +143,7 @@ public class MapperGenerator extends AbstractProcessor {
 				    		bw.append(EXTRA_SPACE+"List<"+genericClassName+"> "+genericClassName.toLowerCase()+"List = new ArrayList<"+genericClassName+">();\n");
 				    		bw.append(EXTRA_SPACE+"for("+genericClassNameSource+" "+genericClassNameSource.toLowerCase() +": source."+methodGet.getName()+"()) { \n");
 				    		bw.append(EXTRA_SPACE+EXTRA_SPACE+genericClassName.toLowerCase()+"List.add("+genericClassNameSource.toLowerCase()+"Mapper.mapSourceToDTO("+genericClassNameSource.toLowerCase()+"));\n");
-				    		bw.append(EXTRA_SPACE+"}\n");
+				    		bw.append(EXTRA_SPACE+EXTRA_SPACE+"}\n");
 				    		bw.append(EXTRA_SPACE+dtoName.toLowerCase()+"."+methodSet.getName()+"("+genericClassName.toLowerCase()+"List); \n");
 				    	}
 			    	}  else {
@@ -155,21 +155,14 @@ public class MapperGenerator extends AbstractProcessor {
 				    				+ "("+sourceFieldTypeSimpleName.toLowerCase()+"Mapper.mapSourceToDTO(source."+methodGet.getName()+"())); \n");
 				    	}
 			    	}	
-			    	
-			    	
-			    	
-			    	
-			    	
-			    	//System.out.println("fieldType-------------"+fieldType.getSimpleName());
 			    }
 			    bw.append(EXTRA_SPACE+"return "+dtoName.toLowerCase()+";\n");
 
-                bw.append("}\n");
+                bw.append(EXTRA_SPACE+"}\n");
                 bw.append("}\n");
 
 				bw.flush();
 				bw.close();
-				System.out.println(sourceClassName+"Mapper Generated");
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

@@ -9,5 +9,6 @@
   <modules>
   	<module>annotation-processors</module>
   	<module>models</module>
+  	<module>mappers-test</module>
   </modules>
 </project>

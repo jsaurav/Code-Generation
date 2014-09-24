@@ -1,6 +1,6 @@
 /**Auto generated code,don't modify it.
 * Author             ---- > Auto Generated.
-* Date  and Time     ---- > Tue Sep 23 10:46:06 IST 2014
+* Date  and Time     ---- > Wed Sep 24 11:03:42 IST 2014
 * Source             -----> com.techidiocy.models.source.Address
 * Destination        -----> com.techidiocy.models.destination.AddressDTO
 ***/
@@ -28,5 +28,5 @@ public AddressDTO mapSourceToDTO(Address source) {
    addressdto.setState(source.getState()); 
    addressdto.setZipcode(source.getZipcode()); 
    return addressdto;
-}
+   }
 }
